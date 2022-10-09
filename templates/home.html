@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>House Price Predictions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <center><h1>Opportunity Final Stage Predictor</h1></center>
+        <form method="post" action="{{ url_for('predict') }}" class="ms-5">
+            
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">OF_EXPIRING_PRODUCTS__C</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="CRIM" name="OF_EXPIRING_PRODUCTS__C">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">APTS_ACCOUNT_ELIGIBLE__C</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="ZN" name="APTS_ACCOUNT_ELIGIBLE__C">
+              </div> 
+            
+            <div class="form-group col-md-6">
+              <label for="inputAddress">NEXT_STEPS_POPULATED__C</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="INDUS" name="NEXT_STEPS_POPULATED__C">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress2">AMOUNT</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="CHAS" name="AMOUNT">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">BILLING_AMOUNTMISMATCH__C</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="NOX" name="BILLING_AMOUNTMISMATCH__C">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">CLOSE_DATE_MOVED__C</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="RM" name="CLOSE_DATE_MOVED__C">
+              </div>
+              <fieldset>
+                <legend>Channel</legend>   
+              <div class="form-group col-md-6">
+                <label for="inputZip">Direct - Carahsoft</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="AGE" name="Direct - Carahsoft">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Direct - DLT</label>
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="DIS" name="Direct - DLT">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Direct - End Customer</label>
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="RAD" name="Direct - End Customer">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress">Direct - GTSI</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="TAX" name="Direct - GTSI">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress2">Direct - VAR/VAD</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="PTRATIO" name="Direct - VAR/VAD">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Direct End Customer</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="B" name="Direct End Customer">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputState">Direct Reseller</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="LSTAT" name="Direct Reseller">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Direct – OEM</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="CRIM" name="Direct – OEM">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Distributor</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="ZN" name="Distributor">
+              </div> 
+            
+            <div class="form-group col-md-6">
+              <label for="inputAddress">Indirect - Internal Commissions Credit</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="INDUS" name="Indirect - Internal Commissions Credit">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress2">Indirect - VAR/VAD</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="CHAS" name="Indirect - VAR/VAD">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Indirect – OEM Preload</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="NOX" name="Indirect – OEM Preload">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">Indirect – Webstore</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="RM" name="Indirect – Webstore">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputZip">OEM</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="AGE" name="OEM">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Webstore</label>
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="DIS" name="dis">
+                </div>
+              </fieldset>      
+                <fieldset>
+                  <legend>Payement Type</legend>      
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Channel Fulfillment</label>
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="RAD" name="Channel Fulfillment">
+                </div>
+              </div>
+              
+                <label for="inputAddress">Credit Card</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="TAX" name="Credit Card">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress2">EMEA Purchase Order</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="PTRATIO" name="EMEA Purchase Order">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">LATAM Purchase Order</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="B" name="LATAM Purchase Order">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputState">NA Purchase Order</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="LSTAT" name="NA Purchase Order">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Pre-Pay</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="CRIM" name="Pre-Pay">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Purchase Order</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="ZN" name="Purchase Order">
+              </div> 
+            </fieldset>  
+          <fieldset>
+            <legend>Opportunity Record Type</legend>  
+            <div class="form-group col-md-6">
+              <label for="inputAddress">EMEA Sales Opportunity</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="INDUS" name="EMEA Sales Opportunity">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress2">LATAM Sales Opportunity</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="CHAS" name="LATAM Sales Opportunity">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">NA Canada Sales</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="NOX" name="NA Canada Sales">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">NA Fed Sled</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="RM" name="NA Fed Sled">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputZip">NA Sales Opportunity</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="AGE" name="NA Sales Opportunity">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Overlay Credit</label>
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="DIS" name="Overlay Credit">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Renewal</label>
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="RAD" name="Renewal">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress">Strategic Accounts Sales</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="TAX" name="Strategic Accounts Sales">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress2">Zero Value Opportunity</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="PTRATIO" name="Zero Value Opportunity">
+              </div>
+            </fieldset>  
+          <fieldset>
+            <legend>Country</legend>
+              
+                <div class="form-group col-md-6">
+                  <label for="inputCity">ANZ</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="B" name="ANZ">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputState">ASEAN</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="LSTAT" name="ASEAN">
+                </div>
+              
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Brazil</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="CRIM" name="Brazil">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">CE</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="ZN" name="CE">
+              </div> 
+            
+            <div class="form-group col-md-6">
+              <label for="inputAddress">CEMEA</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="INDUS" name="CEMEA">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress2">CENE</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="CHAS" name="CENE">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">Canada</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="NOX" name="Canada">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">DACH</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="RM" name="DACH">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputZip">GCG</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="AGE" name="GCG">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">GEMs</label>
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="DIS" name="GEMs">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Germany</label>
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="RAD" name="Germany">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress">India</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="TAX" name="India">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputAddress2">India/Pakistan</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="PTRATIO" name="India/Pakistan">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">Japan</label>
+                  <input type="text" class="form-control" id="inputCity" placeholder="B" name="Japan">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputState">MED</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="LSTAT" name="MED">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Mexico</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="CRIM" name="Mexico">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">NOLA</label>
+                <input type="text" class="form-control" id="inputPassword4" placeholder="ZN" name="NOLA">
+              </div> 
+            
+            <div class="form-group col-md-6">
+              <label for="inputAddress">NWE</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="INDUS" name="NWE">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputAddress2">Nordics</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="CHAS" name="Nordics">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">SAC</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="NOX" name="SAC">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputState">SOLA</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="RM" name="SOLA">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputZip">UKI</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="AGE" name="UKI">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">US</label>
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="DIS" name="US">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">WEMEA</label>
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="RAD" name="WEMEA">
+                </div>
+              </div>
+          </fieldset>      
+            <input type="submit" class="btn btn-primary mt-2" value="Click Here to Predict">
+          </form>
+
+          <h3>{{prediction_text}}</h3>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
